@@ -180,4 +180,36 @@ const booksData = [
     cover: "soft cover",
   },
 ];
- module.exports=booksData
+const authorsData = [
+    {
+      name: "J.K. Rowling",
+      birthYear: 1965,
+      nationality: "British"
+    },
+    {
+      name: "George Orwell",
+      birthYear: 1903,
+      nationality: "British"
+    },
+    {
+      name: "Charlotte Brontë",
+      birthYear: 1816,
+      nationality: "British"
+    },
+    {
+      name: "F. Scott Fitzgerald",
+      birthYear: 1896,
+      nationality: "American"
+    },
+    {
+      name: "Harper Lee",
+      birthYear: 1926,
+      nationality: "American"
+    },
+    {
+      name: "Jane Austen",
+      birthYear: 1775,
+      nationality: "British"
+    }
+  ];
+ module.exports={booksData,authorsData}
