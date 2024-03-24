@@ -12,6 +12,7 @@ const { verifyTokenAndAdmin } = require("../middlewares/verifyToken");
  */
 router.get("/", exceptionHandler(async(req, res) => {
   const {genreQuery}=req.query;
+  let books;
   if (genreQuery) {
     books=await Book.find({genre:{$eq:genreQuery}}).populate("author",["-_id","name","nationality"]);
   }else{
