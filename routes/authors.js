@@ -12,7 +12,8 @@ const router = express.Router();
  * @access public
  */
 router.get("/", exceptionHandler(async(req, res) => {
-  const authorList=await Author.find();
+  const {pageNumber,authorsPerPage}=req.query;
+  const authorList=await Author.find().skip((pageNumber-1)*authorsPerPage).limit(authorsPerPage);
   res.status(200).json(authorList)})
 );
 /**
