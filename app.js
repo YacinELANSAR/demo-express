@@ -1,6 +1,6 @@
 const express = require("express");
 require("dotenv").config({ path: "./config/.env" });
-require("./config/connectionDataBase");
+// require("./config/connectionDataBase");
 
 const { notFound, errorHandler } = require("./middlewares/errors");
 const connectToDB = require("./config/connectionDataBase");
