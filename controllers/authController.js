@@ -4,7 +4,7 @@ const bcrypt=require('bcryptjs');
 
 /**
  * @desc Register a new user
- * @route /Auth
+ * @route /api/Auth
  * @method POST 
  * @access public
  */
@@ -37,7 +37,7 @@ module.exports.register=exceptionHandler(async(req,res)=>{
 
 /**
  * @desc login a user
- * @route /Auth
+ * @route /api/Auth
  * @method POST 
  * @access public
  */

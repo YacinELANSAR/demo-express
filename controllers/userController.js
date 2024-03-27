@@ -4,7 +4,7 @@ var exceptionHandler = require("express-exception-handler").wrap;
 
 /**
  * @desc Get All Users
- * @route /users
+ * @route /api/users
  * @method GET
  * @access private (only Admin)
  */
@@ -14,7 +14,7 @@ module.exports.getAllUsers=exceptionHandler(async (req, res) => {
   })
 /**
  * @desc Get User
- * @route /users/:id
+ * @route /api/users/:id
  * @method GET
  * @access private (only Admin & user himself)
  */
@@ -27,7 +27,7 @@ module.exports.getUserById=exceptionHandler(async (req, res) => {
   })
 /**
  * @desc Edit a user
- * @route /users/:id
+ * @route /api/users/:id
  * @method PUT
  * @access private
  */
@@ -54,7 +54,7 @@ module.exports.updateUser=exceptionHandler(async (req, res) => {
   })
 /**
  * @desc Delete User
- * @route /users/:id
+ * @route /api/users/:id
  * @method GET
  * @access private (only Admin & user himself)
  */

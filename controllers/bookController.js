@@ -7,7 +7,7 @@ const {
 
 /**
  * @desc Get All books
- * @route /books
+ * @route /api/books
  * @method GET
  * @access public
  */
@@ -31,7 +31,7 @@ module.exports.getAllBooks = exceptionHandler(async (req, res) => {
 });
 /**
  * @desc Get A book By id
- * @route /books/:id
+ * @route /api/books/:id
  * @method GET
  * @access public
  */
@@ -44,7 +44,7 @@ module.exports.getBookById = exceptionHandler(async (req, res) => {
 });
 /**
  * @desc Create a new book
- * @route /books
+ * @route /api/books
  * @method POST
  * @access private (only admin)
  */
@@ -65,7 +65,7 @@ module.exports.createBook = exceptionHandler(async (req, res) => {
 });
 /**
  * @desc Edit a book
- * @route /books/:id
+ * @route /api/books/:id
  * @method PUT
  * @access private (only admin)
  */
@@ -93,7 +93,7 @@ module.exports.updateBook = exceptionHandler(async (req, res) => {
 });
 /**
  * @desc Delete a book
- * @route /books/:id
+ * @route /api/books/:id
  * @method DELETE
  * @access private(only admin)
  */

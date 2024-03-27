@@ -2,7 +2,7 @@ var exceptionHandler = require('express-exception-handler').wrap
 const {Author,validatorCreateAuthor,validatorUpdateAuthor}=require('../models/Author');
 /**
  * @desc Get All Authors
- * @route /Authors
+ * @route /api/Authors
  * @method GET 
  * @access public
  */
@@ -12,7 +12,7 @@ module.exports.getAllAuthors=exceptionHandler(async(req, res) => {
     res.status(200).json(authorList)})
 /**
  * @desc Get A Author By id
- * @route /Authors/:id
+ * @route /api/Authors/:id
  * @method GET 
  * @access public
  */
@@ -26,7 +26,7 @@ module.exports.getAuthorById=exceptionHandler(async (req, res) => {
   })
 /**
  * @desc Create a new Author
- * @route /Authors
+ * @route /api/Authors
  * @method POST 
  * @access private (only admin)
  */
@@ -46,7 +46,7 @@ module.exports.createAuthor=exceptionHandler(async (req, res) => {
   })
 /**
  * @desc Edit a Author
- * @route /Authors/:id
+ * @route /api/Authors/:id
  * @method PUT 
  * @access private (only admin)
  */
@@ -74,7 +74,7 @@ module.exports.updateAuthor=exceptionHandler(async (req, res) => {
   })
 /**
  * @desc Delete a Author
- * @route /Authors/:id
+ * @route /api/Authors/:id
  * @method DELETE 
  * @access private (only admin)
  */
