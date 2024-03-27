@@ -1,4 +1,4 @@
-const { User } = require("../models/User");
+const { User, validatorChangePassword } = require("../models/User");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const exceptionHandler = require("express-exception-handler").wrap;
@@ -19,6 +19,10 @@ module.exports.getForgotPasswordView = exceptionHandler((req, res) => {
  * @access public
  */
 module.exports.sendForgotPasswordLink = exceptionHandler(async (req, res) => {
+  const {error}=validatorChangePassword(req.body);
+  if(error){
+    return res.status(400).json({message:error.details[0].message})
+  }
   const user = await User.findOne({ email: req.body.email });
   if (!user) {
     return res.status(404).json({ message: "user not found" });

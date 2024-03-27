@@ -1,6 +1,7 @@
 const express = require("express");
+const path = require("path");
 require("dotenv").config({ path: "./config/.env" });
-// require("./config/connectionDataBase");
+
 
 const { notFound, errorHandler } = require("./middlewares/errors");
 const connectToDB = require("./config/connectionDataBase");
@@ -8,6 +9,8 @@ const connectToDB = require("./config/connectionDataBase");
 connectToDB();
 // init app
 const app = express();
+// staticfolder
+app.use(express.static(path.join(__dirname, "images")))
 // middleware
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
@@ -19,6 +22,7 @@ app.use("/api/books", require("./routes/books"));
 app.use("/api/authors", require("./routes/authors"));
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/users", require("./routes/users"));
+app.use("/api/upload", require("./routes/upload"));
 app.use("/password", require("./routes/password"));
 
 // error handler middleware
